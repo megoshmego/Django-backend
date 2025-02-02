@@ -1,4 +1,5 @@
-from django.urls import path
+from django.urls import path, include
+from django.contrib import admin
 from .views import candlestick_data, line_chart_data, bar_chart_data, pie_chart_data
 
 urlpatterns = [
