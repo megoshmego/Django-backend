@@ -1,10 +1,9 @@
-from django.urls import path, include
-from django.contrib import admin
-from .views import candlestick_data, line_chart_data, bar_chart_data, pie_chart_data
+from django.urls import path
+from . import views  # Import views from the current app
 
 urlpatterns = [
-    path('candlestick-data/', candlestick_data, name='candlestick_data'),
-    path('line-chart-data/', line_chart_data, name='line_chart_data'),
-    path('bar-chart-data/', bar_chart_data, name='bar_chart_data'),
-    path('pie-chart-data/', pie_chart_data, name='pie_chart_data'),
+    path("candlestick-data/", views.candlestick_data, name="candlestick_data"),  # ✅ Added missing route
+    path("line-chart-data/", views.line_chart_data, name="line_chart_data"),
+    path("bar-chart-data/", views.bar_chart_data, name="bar_chart_data"),
+    path("pie-chart-data/", views.pie_chart_data, name="pie_chart_data"),
 ]
